@@ -15,8 +15,11 @@ class LocalCatFactsGenerator(
      * обернутую в подходящий стрим(Flowable/Single/Observable и т.п)
      */
     fun generateCatFact(): Single<Fact> {
-        return Single.never()
+        val index = Random.nextInt(5)
+        val stringToFacts = context.resources.getStringArray(R.array.local_cat_facts)[index]
+        return Single.just(Fact(stringToFacts))
     }
+
 
     /**
      * Реализуйте функцию otus.homework.reactivecats.LocalCatFactsGenerator#generateCatFactPeriodically так,
