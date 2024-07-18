@@ -25,27 +25,6 @@ class CatsViewModel(
         getFacts()
     }
 
-//    init {
-//
-//        catsService.getCatFact().enqueue(object : Callback<Fact> {
-//            override fun onResponse(call: Call<Fact>, response: Response<Fact>) {
-//                if (response.isSuccessful && response.body() != null) {
-//                    _catsLiveData.value = Success(response.body()!!)
-//                } else {
-//                    _catsLiveData.value = Error(
-//                        response.errorBody()?.string() ?: context.getString(
-//                            R.string.default_error_text
-//                        )
-//                    )
-//                }
-//            }
-//
-//            override fun onFailure(call: Call<Fact>, t: Throwable) {
-//                _catsLiveData.value = ServerError
-//            }
-//        })
-//    }
-
     fun getFacts() {
         disposable.add(
             factsResponse
